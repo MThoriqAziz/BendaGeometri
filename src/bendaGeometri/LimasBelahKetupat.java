@@ -13,7 +13,7 @@ public class LimasBelahKetupat extends BelahKetupat {
     public LimasBelahKetupat(double diagonal1, double diagonal2, double sisiBk, double tinggiLimasBk, double tinggiSisiTegakBk) {
         super(diagonal1, diagonal2, sisiBk);
         if (diagonal1 <= 0 || diagonal2 <= 0 || sisiBk <= 0 || tinggiLimasBk <= 0 || tinggiSisiTegakBk <= 0) {
-            throw new IllegalArgumentException("semua parameter harus positif");
+            throw new IllegalArgumentException("semua parameter harus positif ya");
         }
         this.tinggiLimasBk = tinggiLimasBk;
         this.tinggiSisiTegakBk = tinggiSisiTegakBk;
