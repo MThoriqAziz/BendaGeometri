@@ -1,3 +1,5 @@
+package bendaGeometri;
+
 public class PersegiPanjang extends Benda2D {
 
     public double panjang;
@@ -9,13 +11,26 @@ public class PersegiPanjang extends Benda2D {
     private double kelilingPersegiPanjang;
 
     public PersegiPanjang(double panjang, double lebar) {
+        this.panjang = panjang;
+        this.lebar = lebar;
     }
 
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+       luasPersegiPanjang = panjang * lebar;
+       return luasPersegiPanjang;
     }
 
+    @Override
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingPersegiPanjang = 2 * (panjang + lebar);
+        return kelilingPersegiPanjang;
     }
+    
+    @Override
+    public void hitungVolume(){}
+    
+    @Override
+    public void hitungLuasPermukaan(){}
+    
 }
