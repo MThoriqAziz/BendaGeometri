@@ -32,5 +32,5 @@ public class PersegiPanjang extends Benda2D {
     
     @Override
     public void hitungLuasPermukaan(){}
-    
+    //
 }
