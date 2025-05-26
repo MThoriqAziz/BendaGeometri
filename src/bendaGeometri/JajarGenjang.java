@@ -22,7 +22,6 @@ public class JajarGenjang extends Benda2D {
     public double hitungLuas() {
         luasJajarGenjang = alas * tinggi;
         return luasJajarGenjang;
-        
     }
 
     @Override
