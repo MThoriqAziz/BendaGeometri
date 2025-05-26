@@ -1,3 +1,5 @@
+package bendaGeometri;
+
 public class Persegi extends Benda2D {
 
     public double sisi;
@@ -8,12 +10,22 @@ public class Persegi extends Benda2D {
 
     public Persegi(double sisi) {
     }
-
+    
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }//
-
-    public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasPersegi = sisi * sisi;
+        return luasPersegi;
     }
+    
+    @Override
+    public double hitungKeliling() {
+        kelilingPersegi = 4 * sisi;
+        return kelilingPersegi;
+    }
+    
+     @Override
+    public void hitungVolume(){}
+    
+    @Override
+    public void hitungLuasPermukaan(){}
 }
