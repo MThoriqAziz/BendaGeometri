@@ -1,3 +1,5 @@
+package bendaGeometri
+
 public class PrismaTrapesium extends Trapesium {
 
     private double tinggiPrismaTrapesium;

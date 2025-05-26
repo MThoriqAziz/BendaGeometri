@@ -1,4 +1,4 @@
-package double;
+package bendaGeometri;
 
 public class Trapesium extends Benda2D {
 
@@ -15,13 +15,27 @@ public class Trapesium extends Benda2D {
     private double kelilingTrapesium;
 
     public Trapesium(double sisiSejajar1, double sisiSejajar2, double tinggi, double sisiMiring) {
+        this.sisiSejajar1 = sisiSejajar1;
+        this.sisiSejajar2=sisiSejajar2;
+        this.tinggi=tinggi;
+        this.sisiMiring=sisiMiring;
     }
-
+    
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasTrapesium = 0.5*(sisiSejajar1 + sisiSejajar2) * tinggi;
+        return luasTrapesium;
     }
 
+    @Override
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingTrapesium = sisiSejajar1 + sisiSejajar2 + 2 * sisiMiring;
+        return kelilingTrapesium;
     }
+    
+    @Override
+    public void hitungVolume(){}
+    
+    @Override
+    public void hitungLuasPermukaan(){}
 }

@@ -1,21 +1,36 @@
+package bendaGeometri;
+
 public class Segitiga extends Benda2D {
 
-    public double sisi;
+    public double alas;
 
     public double tinggi;
+    
+    public double sisi;
 
     private double luasSegitiga;
 
     private double kelilingSegitiga;
 
-    public Segitiga(double sisi, double tinggi) {
+    public Segitiga(double alas, double tinggi) {
+        this.alas = alas;
+        this.tinggi = tinggi;
     }
 
+    @Override
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingSegitiga = sisi + sisi + alas;
+        return kelilingSegitiga;
     }
 
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+         luasSegitiga =  0.5 * alas * tinggi;
+         return luasSegitiga;
     }
+        @Override
+    public void hitungVolume(){}
+    
+    @Override
+    public void hitungLuasPermukaan(){}
 }
