@@ -17,18 +17,19 @@ public class LimasBelahKetupat extends BelahKetupat {
         }
         this.tinggiLimasBk = tinggiLimasBk;
         this.tinggiSisiTegakBk = tinggiSisiTegakBk;
-        this.volumeLimasBk = hitungVolumeBk();
-        this.luasPermukaanLimasBk = hitungLuasPermukaanBk();
+
     
     }
 
-    public double hitungVolumeBk() {
-        return (1.0 / 3.0) * super.hitungLuas() * tinggiLimasBk;
+    @Override
+    public void hitungVolume() {
+        volumeLimasBk = (1.0 / 3.0) * super.hitungLuas() * tinggiLimasBk;
     }
 
-    public double hitungLuasPermukaanBk() {
+    @Override
+    public void hitungLuasPermukaan() {
         double luasAlas = super.hitungLuas();
         double luasSisiTegak = (1.0 / 2.0) * super.hitungKeliling() / 4 * tinggiSisiTegakBk;
-        return luasAlas + 4 * luasSisiTegak;
+        luasPermukaanLimasBk = luasAlas + 4 * luasSisiTegak;
     }
 }

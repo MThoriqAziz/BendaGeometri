@@ -15,19 +15,20 @@ public class PrismaBelahKetupat extends BelahKetupat {
             throw new IllegalArgumentException("parameter harus positif");
         }
         this.tinggiPrismaBk = tinggiPrismaBk;
-        this.volumePrismaBk = hitungVolumePrismaBk();
-        this.luasPermukaanBk = hitungLuasPermukaanBk();
+
         
     }
 
-    public double hitungLuasPermukaanBk() {
+    @Override
+    public void hitungLuasPermukaan() {
         double luasAlas = super.hitungLuas();
         double keliling = super.hitungKeliling();
-        return 2 * luasAlas + keliling * tinggiPrismaBk;
+        luasPermukaanBk = 2 * luasAlas + keliling * tinggiPrismaBk;
     }
 
-    public double hitungVolumePrismaBk() {
-        return super.hitungLuas() * tinggiPrismaBk;
+    @Override
+    public void hitungVolume() {
+        volumePrismaBk = super.hitungLuas() * tinggiPrismaBk;
         
     }
 }
