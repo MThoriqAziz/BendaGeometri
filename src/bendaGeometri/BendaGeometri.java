@@ -1,12 +1,12 @@
-package double;
+package bendaGeometri;
 
 interface BendaGeometri {
 
-    double hitungLuas();
+    public double hitungLuas();
 
-    double hitungKeliling();
+    public double hitungKeliling();
 
-    double hitungVolume();
+    public void hitungVolume();
 
-    double hitungLuasPermukaan();
+    public void hitungLuasPermukaan();
 }

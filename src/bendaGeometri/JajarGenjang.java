@@ -1,4 +1,4 @@
-package double;
+package bendaGeometri;
 
 public class JajarGenjang extends Benda2D {
 
@@ -10,16 +10,30 @@ public class JajarGenjang extends Benda2D {
 
     private double kelilingJajarGenjang;
 
-    private double sisiMiringJajarGenjang;
+    public double sisiMiringJajarGenjang;
 
     public JajarGenjang(double alas, double tinggi, double sisiMiringJajarGenjang) {
+        this.alas = alas;
+        this.tinggi = tinggi;
+        this.sisiMiringJajarGenjang = sisiMiringJajarGenjang;
     }
 
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasJajarGenjang = alas * tinggi;
+        return luasJajarGenjang;
+        
     }
 
+    @Override
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingJajarGenjang = 2 * (alas * sisiMiringJajarGenjang);
+        return kelilingJajarGenjang;
     }
+    
+    @Override
+    public void hitungVolume(){}
+    
+    @Override
+    public void hitungLuasPermukaan(){}
 }

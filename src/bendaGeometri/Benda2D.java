@@ -1,8 +1,10 @@
+package bendaGeometri;
+
 public abstract class Benda2D implements BendaGeometri {
 
-    public void hitungKeliling() {
-    }
+    @Override
+    public abstract double hitungKeliling();
 
-    public void hitungLuas() {
-    }
+    @Override
+    public abstract double hitungLuas();
 }
