@@ -1,19 +1,25 @@
+package bendaGeometri;
+
 public class PrismaPersegiPanjang extends PersegiPanjang {
 
-    private double tinggiBalok;
+    private double tinggi;
+    private double volume;
+    private double luasPermukaanPrismaPersegiPanjang;
 
-    private double volumeBalok;
-
-    private double luasPermukaanBalok;
-
-    public PrismaPersegiPanjang(double tinggiBalok) {
+    public PrismaPersegiPanjang(double panjang, double lebar, double tinggi) {
+        super(panjang, lebar);
+        this.tinggi = tinggi;
     }
-
-    public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    
+    @Override
+    public void hitungVolume() {
+        double luasAlas = hitungLuas();
+        volume = luasAlas * tinggi;
+        System.out.println("Volume Balok (Prisma Persegi Panjang): " + volume);
     }
-
-    public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    @Override
+    public void hitungLuasPermukaan() {
+        luasPermukaanPrismaPersegiPanjang = 2 * (panjang * lebar + panjang * tinggi + lebar * tinggi);
+        System.out.println("Luas Permukaan Balok (Prisma Persegi Panjang): " + luasPermukaanPrismaPersegiPanjang);
     }
 }
