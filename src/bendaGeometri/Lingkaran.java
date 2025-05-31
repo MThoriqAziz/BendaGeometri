@@ -1,4 +1,4 @@
-package double;
+package bendaGeometri;
 
 public class Lingkaran extends Benda2D {
 
@@ -8,16 +8,29 @@ public class Lingkaran extends Benda2D {
 
     private double kelilingLingkaran;
 
-    public double phi;
-
-    public Lingkaran(double jariJari, double phi) {
+    public Lingkaran(double jariJari) {
+        this.jariJari = jariJari;
     }
 
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasLingkaran = Math.PI * jariJari * jariJari;
+        return luasLingkaran;
     }
 
+    @Override
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingLingkaran = 2 * Math.PI * jariJari;
+        return kelilingLingkaran;
+    }
+
+    @Override
+    public void hitungVolume() {
+        // Lingkaran 2D tidak memiliki volume
+    }
+
+    @Override
+    public void hitungLuasPermukaan() {
+        // Lingkaran 2D tidak memiliki luas permukaan
     }
 }

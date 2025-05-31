@@ -9,6 +9,7 @@ public class Persegi extends Benda2D {
     private double kelilingPersegi;
 
     public Persegi(double sisi) {
+        this.sisi = sisi; // ini penting agar atribut sisi terisi!
     }
     
     @Override

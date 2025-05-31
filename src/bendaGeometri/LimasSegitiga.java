@@ -1,3 +1,5 @@
+package bendaGeometri;
+
 public class LimasSegitiga extends Segitiga {
 
     private double tinggiLimas;
@@ -8,14 +10,21 @@ public class LimasSegitiga extends Segitiga {
 
     private double luasPermukaanLimasSegitiga;
 
-    public LimasSegitiga(double tinggiLimas, double alas) {
+    public LimasSegitiga(double tinggiLimas, double alas, double tinggiSegitiga) {
+            super(alas, tinggiSegitiga);
+            this.tinggiLimas = tinggiLimas;
     }
 
-    public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    @Override
+    public void hitungVolume() {
+        volumeLimasSegitiga =  (1.0/3) * super.hitungLuas() * tinggiLimas;
+        return volumeLimasSegitiga;
     }
 
+    @Override
     public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasPermukaanLimasSegitiga = luasSegitiga * 3;
+        return   luasPermukaanLimasSegitiga;
+        
     }
 }

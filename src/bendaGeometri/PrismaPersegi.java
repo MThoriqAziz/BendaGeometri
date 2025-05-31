@@ -1,17 +1,37 @@
-private class PrismaPersegi extends Persegi {
+package bendaGeometri;
 
-    private double VolumeKubus;
+public class PrismaPersegi extends Persegi {
 
-    private double LuasPermukaanKubus;
+    private double tinggiPrisma;
+    private double volumePrisma;
+    private double luasPermukaanPrisma;
 
-    public PrismaPersegi() {
+    public PrismaPersegi(double sisi, double tinggiPrisma) {
+        super(sisi);
+        if (sisi <= 0 || tinggiPrisma <= 0) {
+            throw new IllegalArgumentException("Parameter harus positif");
+        }
+        this.tinggiPrisma = tinggiPrisma;
     }
 
-    public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    @Override
+    public void hitungLuasPermukaan() {
+        double luasAlas = super.hitungLuas();
+        double kelilingAlas = super.hitungKeliling();
+        luasPermukaanPrisma = 2 * luasAlas + kelilingAlas * tinggiPrisma;
     }
 
-    public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    @Override
+    public void hitungVolume() {
+        volumePrisma = super.hitungLuas() * tinggiPrisma;
+    }
+
+    // Getter untuk ambil hasil hitungan (opsional)
+    public double getLuasPermukaanPrisma() {
+        return luasPermukaanPrisma;
+    }
+
+    public double getVolumePrisma() {
+        return volumePrisma;
     }
 }

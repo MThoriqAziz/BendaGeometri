@@ -4,7 +4,7 @@ public class Segitiga extends Benda2D {
 
     public double alas;
 
-    public double tinggi;
+    public double tinggiSegitiga;
     
     public double sisi;
 
@@ -12,9 +12,9 @@ public class Segitiga extends Benda2D {
 
     private double kelilingSegitiga;
 
-    public Segitiga(double alas, double tinggi) {
+    public Segitiga(double alas, double tinggiSegitiga) {
         this.alas = alas;
-        this.tinggi = tinggi;
+        this.tinggiSegitiga = tinggiSegitiga;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Segitiga extends Benda2D {
 
     @Override
     public double hitungLuas() {
-         luasSegitiga =  0.5 * alas * tinggi;
+         luasSegitiga =  0.5 * alas * tinggiSegitiga;
          return luasSegitiga;
     }
         @Override
