@@ -1,21 +1,27 @@
+package bendaGeometri;
+
 public class JuringLingkaran extends Lingkaran {
-
-    private double jariJari;
-
-    private double sudut;
-
+    private double sudut; 
+    
     private double luasJuringLingkaran;
-
+    
     private double kelilingJuringLingkaran;
 
     public JuringLingkaran(double jariJari, double sudut) {
+        super(jariJari); // panggil konstruktor Lingkaran
+        this.sudut = sudut;
     }
 
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasJuringLingkaran = (sudut / 360.0) * Math.PI * jariJari * jariJari;
+        return luasJuringLingkaran;
     }
 
+    @Override
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double panjangBusur = (sudut / 360.0) * 2 * Math.PI * jariJari;
+        kelilingJuringLingkaran = panjangBusur + 2 * jariJari;
+        return kelilingJuringLingkaran;
     }
 }

@@ -12,9 +12,10 @@ public class Segitiga extends Benda2D {
 
     private double kelilingSegitiga;
 
-    public Segitiga(double alas, double tinggiSegitiga) {
+    public Segitiga(double alas, double tinggiSegitiga,double sisi) {
         this.alas = alas;
         this.tinggiSegitiga = tinggiSegitiga;
+        this.sisi = sisi;
     }
 
     @Override
