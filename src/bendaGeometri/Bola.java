@@ -2,11 +2,13 @@ package bendaGeometri;
 
 public class Bola extends Lingkaran {
 
+    private Lingkaran lingkaran;
     private double volumeBola;
     private double luasPermukaanBola;
 
     public Bola(double jariJari) {
         super(jariJari);
+         double r = lingkaran.getJariJari();
         if (jariJari <= 0) {
             throw new IllegalArgumentException("Jari-jari harus positif");
         }
@@ -21,12 +23,10 @@ public class Bola extends Lingkaran {
     public void hitungLuasPermukaan() {
         luasPermukaanBola = 4 * Math.PI * jariJari * jariJari;
     }
-
-    public double getVolumeBola() {
-        return volumeBola;
+    
+    @Override
+      public double getJariJari() {
+        return lingkaran.getJariJari();
     }
-
-    public double getLuasPermukaanBola() {
-        return luasPermukaanBola;
-    }
+      
 }

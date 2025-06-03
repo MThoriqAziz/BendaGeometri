@@ -1,3 +1,5 @@
+package  bendaGeometri;
+
 public class Tabung extends Lingkaran {
 
     private double tinggi;
@@ -6,14 +8,23 @@ public class Tabung extends Lingkaran {
 
     private double luasPermukaanSilinder;
 
-    public Tabung(double tinggi) {
+     public Tabung(double jariJari, double tinggi) {
+        super(jariJari); // Kirim jari-jari ke class Lingkaran
+        this.tinggi = tinggi;
     }
 
-    public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    @Override
+    public void  hitungVolume() {
+        volumeSilinder = Math.PI * getJariJari() * getJariJari() * tinggi;
+     }
 
-    public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    @Override
+    public void  hitungLuasPermukaan() {
+       double r = getJariJari();
+        luasPermukaanSilinder = 2 * Math.PI * r * r + 2 * Math.PI * r * tinggi;
+    }
+    
+        public double getTinggi() {
+        return tinggi;
     }
 }

@@ -9,7 +9,7 @@ public class KerucutTerpancung extends Kerucut {
     private double luasPermukaanKerucutTerpancung;
 
     public KerucutTerpancung(double jariJariBawah, double jariJariAtas, double tinggi) {
-        super(double jarijari,double tinggiKerucut); 
+        super(jariJariBawah,tinggi); // panggil konstruktor Kerucut agar tidak error
         this.jariJariBawah = jariJariBawah;
         this.jariJariAtas = jariJariAtas;
         this.tinggi = tinggi;
@@ -18,7 +18,7 @@ public class KerucutTerpancung extends Kerucut {
     public void hitungVolume() {
         // Volume = (1/3) * π * t * (R² + Rr + r²)
         volumeKerucutTerpancung = (1.0 / 3) * Math.PI * tinggi *
-                (jariJariBawah * jariJariBawah + jariJariBawah * jariJariAtas + jariJariAtas * jariJariAtas);
+                (Math.pow(jariJariBawah, 2) + jariJariBawah * jariJariAtas + Math.pow(jariJariAtas, 2));
     }
 
     public void hitungLuasPermukaan() {
@@ -26,6 +26,14 @@ public class KerucutTerpancung extends Kerucut {
         double selimut = Math.sqrt(Math.pow(jariJariBawah - jariJariAtas, 2) + Math.pow(tinggi, 2));
         // Luas permukaan = π * (R + r) * s + π * R² + π * r²
         luasPermukaanKerucutTerpancung = Math.PI * (jariJariBawah + jariJariAtas) * selimut
-                + Math.PI * jariJariBawah * jariJariBawah + Math.PI * jariJariAtas * jariJariAtas;
+                + Math.PI * Math.pow(jariJariBawah, 2) + Math.PI * Math.pow(jariJariAtas, 2);
+    }
+
+    public double getVolumeKerucutTerpancung() {
+        return volumeKerucutTerpancung;
+    }
+
+    public double getLuasPermukaanKerucutTerpancung() {
+        return luasPermukaanKerucutTerpancung;
     }
 }

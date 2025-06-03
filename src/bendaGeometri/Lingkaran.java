@@ -7,6 +7,8 @@ public class Lingkaran extends Benda2D {
     private double luasLingkaran;
 
     private double kelilingLingkaran;
+    
+    public final double PI = 3.14;
 
     public Lingkaran(double jariJari) {
         this.jariJari = jariJari;
@@ -32,5 +34,9 @@ public class Lingkaran extends Benda2D {
     @Override
     public void hitungLuasPermukaan() {
         // Lingkaran 2D tidak memiliki luas permukaan
+    }
+    
+    public double getJariJari() {
+        return jariJari;
     }
 }

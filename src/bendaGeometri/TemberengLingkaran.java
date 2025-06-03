@@ -1,3 +1,5 @@
+package bendaGeometri;
+
 public class TemberengLingkaran extends Lingkaran {
 
     private double taliBusur;
@@ -13,13 +15,36 @@ public class TemberengLingkaran extends Lingkaran {
     private double kelilingTemberengLingkaran;
 
     public TemberengLingkaran(double taliBusur, double busur, double jariJari, double sudut) {
+        super(jariJari);
+        this.taliBusur = taliBusur;
+        this.jariJari = jariJari;
+        this.sudut = sudut;
+
+        // Hitung panjang busur berdasarkan sudut
+        this.busur = (sudut / 360.0) * 2 * Math.PI * jariJari;
     }
 
+    @Override
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double luasJuring = (sudut / 360.0) * Math.PI * jariJari * jariJari;
+        double sudutRad = Math.toRadians(sudut);
+        double luasSegitiga = 0.5 * jariJari * jariJari * Math.sin(sudutRad);
+        luasTemberengLingkaran = luasJuring - luasSegitiga;
+        return luasTemberengLingkaran;
     }
 
+    @Override
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingTemberengLingkaran = busur + taliBusur;
+        return kelilingTemberengLingkaran;
+    }
+    
+    
+    public double getLuasTemberengLingkaran() {
+        return luasTemberengLingkaran;
+    }
+
+    public double getKelilingTemberengLingkaran() {
+        return kelilingTemberengLingkaran;
     }
 }
