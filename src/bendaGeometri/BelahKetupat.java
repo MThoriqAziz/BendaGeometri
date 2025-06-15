@@ -32,13 +32,5 @@ public class BelahKetupat extends Benda2D {
     public double hitungKeliling() {
         return 4.0 * sisiBk;
     }
-
-    @Override
-    public void hitungVolume() {
-    }
-
-    @Override
-    public void hitungLuasPermukaan() {
-    }
-    
+  
 }

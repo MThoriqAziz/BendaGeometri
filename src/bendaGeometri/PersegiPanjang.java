@@ -27,10 +27,4 @@ public class PersegiPanjang extends Benda2D {
         return kelilingPersegiPanjang;
     }
     
-    @Override
-    public void hitungVolume(){}
-    
-    @Override
-    public void hitungLuasPermukaan(){}
-    
 }

@@ -25,16 +25,6 @@ public class Lingkaran extends Benda2D {
         kelilingLingkaran = 2 * Math.PI * jariJari;
         return kelilingLingkaran;
     }
-
-    @Override
-    public void hitungVolume() {
-        // Lingkaran 2D tidak memiliki volume
-    }
-
-    @Override
-    public void hitungLuasPermukaan() {
-        // Lingkaran 2D tidak memiliki luas permukaan
-    }
     
     public double getJariJari() {
         return jariJari;

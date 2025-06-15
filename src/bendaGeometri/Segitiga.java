@@ -29,9 +29,5 @@ public class Segitiga extends Benda2D {
          luasSegitiga =  0.5 * alas * tinggiSegitiga;
          return luasSegitiga;
     }
-        @Override
-    public void hitungVolume(){}
-    
-    @Override
-    public void hitungLuasPermukaan(){}
+
 }

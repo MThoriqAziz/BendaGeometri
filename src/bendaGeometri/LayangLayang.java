@@ -41,13 +41,4 @@ public class LayangLayang extends Benda2D {
         return kelilingLayangLayang;
     }
 
-    @Override
-    public void hitungVolume() {
-        // Tidak ada volume untuk 2D
-    }
-
-    @Override
-    public void hitungLuasPermukaan() {
-        // Tidak ada luas permukaan untuk 2D
-    }
 }

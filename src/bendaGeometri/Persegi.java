@@ -23,10 +23,5 @@ public class Persegi extends Benda2D {
         kelilingPersegi = 4 * sisi;
         return kelilingPersegi;
     }
-    
-     @Override
-    public void hitungVolume(){}
-    
-    @Override
-    public void hitungLuasPermukaan(){}
+
 }

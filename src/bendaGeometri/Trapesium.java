@@ -32,10 +32,5 @@ public class Trapesium extends Benda2D {
         kelilingTrapesium = sisiSejajar1 + sisiSejajar2 + 2 * sisiMiring;
         return kelilingTrapesium;
     }
-    
-    @Override
-    public void hitungVolume(){}
-    
-    @Override
-    public void hitungLuasPermukaan(){}
+ 
 }
