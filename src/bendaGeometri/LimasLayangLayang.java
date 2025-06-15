@@ -1,42 +1,34 @@
 package bendaGeometri;
 
 public class LimasLayangLayang extends LayangLayang {
-
     private double tinggiLimas;
+    private double volume;
+    private double luasPermukaan;
 
-    private double tinggiSisiTegak1;
-    
-    private double tinggiSisiTegak2;
-
-    private double volumeLimasLayangLayang;
-    
-    private double luasPermukaanLimasLayangLayang;
-
-    public LimasLayangLayang(double diagonal1, double diagonal2, double sisi1, double sisi2,
-                             double tinggiLimas, double tinggiSisiTegak1, double tinggiSisiTegak2) {
-        super(diagonal1, diagonal2, sisi1, sisi2);
+    public LimasLayangLayang(double d1, double d2, double sisiPendek, double sisiPanjang, double tinggiLimas) {
+        super(d1, d2, sisiPendek, sisiPanjang);
         this.tinggiLimas = tinggiLimas;
-        this.tinggiSisiTegak1 = tinggiSisiTegak1;
-        this.tinggiSisiTegak2 = tinggiSisiTegak2;
+    }
+
+    public double getTinggiLimas() {
+        return tinggiLimas;
+    }
+
+    public void setTinggiLimas(double tinggiLimas) {
+        this.tinggiLimas = tinggiLimas;
     }
 
     @Override
-    public void hitungVolume() {
-        volumeLimasLayangLayang = (1.0 / 3) * super.hitungLuas() * tinggiLimas;
+    public double hitungVolume() {
+        volume = (1.0 / 3.0) * super.hitungLuas() * tinggiLimas;
+        return volume;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
-        double luasSisiTegak1 = 0.5 * sisi1 * tinggiSisiTegak1;
-        double luasSisiTegak2 = 0.5 * sisi2 * tinggiSisiTegak2;
-        luasPermukaanLimasLayangLayang = super.hitungLuas() + 2 * (luasSisiTegak1 + luasSisiTegak2);
-    }
-
-    public double getVolume() {
-        return volumeLimasLayangLayang;
-    }
-
-    public double getLuasPermukaan() {
-        return luasPermukaanLimasLayangLayang;
+    public double hitungLuasPermukaan() {
+        // Asumsi: empat sisi tegak adalah segitiga yang berbagi sisi dengan sisi layang-layang
+        double luasSisiTegak = 2 * (getSisiPendek() * tinggiLimas / 2) + 2 * (getSisiPanjang() * tinggiLimas / 2);
+        luasPermukaan = super.hitungLuas() + luasSisiTegak;
+        return luasPermukaan;
     }
 }
