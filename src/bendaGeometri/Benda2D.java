@@ -2,17 +2,20 @@ package bendaGeometri;
 
 public abstract class Benda2D implements BendaGeometri {
 
+    @Override
     public abstract double hitungLuas();
+    
+    @Override
     public abstract double hitungKeliling();
     
     @Override
-    public void hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double hitungVolume() {
+        return 0;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double hitungLuasPermukaan() {
+        return 0;
     }
 
 }

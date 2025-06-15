@@ -1,33 +1,75 @@
 package bendaGeometri;
 
 public class Segitiga extends Benda2D {
+    private double alas;
+    private double tinggi;
+    private double sisiA;
+    private double sisiB;
+    private double sisiC;
 
-    public double alas;
-
-    public double tinggiSegitiga;
-    
-    public double sisi;
-
-    private double luasSegitiga;
-
-    private double kelilingSegitiga;
-
-    public Segitiga(double alas, double tinggiSegitiga,double sisi) {
+    public Segitiga(double alas, double tinggi, double sisiA, double sisiB, double sisiC) {
         this.alas = alas;
-        this.tinggiSegitiga = tinggiSegitiga;
-        this.sisi = sisi;
+        this.tinggi = tinggi;
+        this.sisiA = sisiA;
+        this.sisiB = sisiB;
+        this.sisiC = sisiC;
+    }
+
+    // Getter
+    public double getAlas() {
+        return alas;
+    }
+
+    public double getTinggi() {
+        return tinggi;
+    }
+
+    public double getSisiA() {
+        return sisiA;
+    }
+
+    public double getSisiB() {
+        return sisiB;
+    }
+
+    public double getSisiC() {
+        return sisiC;
+    }
+
+    // Setter
+    public void setAlas(double alas) {
+        this.alas = alas;
+    }
+
+    public void setTinggi(double tinggi) {
+        this.tinggi = tinggi;
+    }
+
+    public void setSisiA(double sisiA) {
+        this.sisiA = sisiA;
+    }
+
+    public void setSisiB(double sisiB) {
+        this.sisiB = sisiB;
+    }
+
+    public void setSisiC(double sisiC) {
+        this.sisiC = sisiC;
+    }
+
+    // Override metode abstrak
+    @Override
+    public double hitungLuas() {
+        return 0.5 * alas * tinggi;
+    }
+
+    // Overloading hitungLuas
+    public double hitungLuas(double alas, double tinggi) {
+        return 0.5 * alas * tinggi;
     }
 
     @Override
     public double hitungKeliling() {
-        kelilingSegitiga = sisi + sisi + alas;
-        return kelilingSegitiga;
+        return sisiA + sisiB + sisiC;
     }
-
-    @Override
-    public double hitungLuas() {
-         luasSegitiga =  0.5 * alas * tinggiSegitiga;
-         return luasSegitiga;
-    }
-
 }
