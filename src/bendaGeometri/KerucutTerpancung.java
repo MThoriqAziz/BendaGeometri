@@ -15,18 +15,22 @@ public class KerucutTerpancung extends Kerucut {
         this.tinggi = tinggi;
     }
 
-    public void hitungVolume() {
+    @Override
+    public double hitungVolume() {
         // Volume = (1/3) * π * t * (R² + Rr + r²)
         volumeKerucutTerpancung = (1.0 / 3) * Math.PI * tinggi *
                 (Math.pow(jariJariBawah, 2) + jariJariBawah * jariJariAtas + Math.pow(jariJariAtas, 2));
+        return volumeKerucutTerpancung;
     }
 
-    public void hitungLuasPermukaan() {
+    @Override
+    public double hitungLuasPermukaan() {
         // s = √((R - r)² + t²)
         double selimut = Math.sqrt(Math.pow(jariJariBawah - jariJariAtas, 2) + Math.pow(tinggi, 2));
         // Luas permukaan = π * (R + r) * s + π * R² + π * r²
         luasPermukaanKerucutTerpancung = Math.PI * (jariJariBawah + jariJariAtas) * selimut
                 + Math.PI * Math.pow(jariJariBawah, 2) + Math.PI * Math.pow(jariJariAtas, 2);
+        return luasPermukaanKerucutTerpancung;
     }
 
     public double getVolumeKerucutTerpancung() {

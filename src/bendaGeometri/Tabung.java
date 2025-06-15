@@ -1,30 +1,28 @@
-package  bendaGeometri;
+package bendaGeometri;
 
 public class Tabung extends Lingkaran {
-
     private double tinggi;
 
-    private double volumeSilinder;
+    public Tabung(double jariJari, double tinggi) {
+        super(jariJari); // panggil konstruktor Lingkaran
+        this.tinggi = tinggi;
+    }
 
-    private double luasPermukaanSilinder;
+    public double getTinggi() {
+        return tinggi;
+    }
 
-     public Tabung(double jariJari, double tinggi) {
-        super(jariJari); // Kirim jari-jari ke class Lingkaran
+    public void setTinggi(double tinggi) {
         this.tinggi = tinggi;
     }
 
     @Override
-    public void  hitungVolume() {
-        volumeSilinder = Math.PI * getJariJari() * getJariJari() * tinggi;
-     }
+    public double hitungVolume() {
+        return Math.PI * Math.pow(getJariJari(), 2) * tinggi;
+    }
 
     @Override
-    public void  hitungLuasPermukaan() {
-       double r = getJariJari();
-        luasPermukaanSilinder = 2 * Math.PI * r * r + 2 * Math.PI * r * tinggi;
-    }
-    
-        public double getTinggi() {
-        return tinggi;
+    public double hitungLuasPermukaan() {
+        return 2 * Math.PI * getJariJari() * (getJariJari() + tinggi);
     }
 }

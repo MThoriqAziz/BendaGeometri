@@ -15,15 +15,17 @@ public class PrismaPersegi extends Persegi {
     }
 
     @Override
-    public void hitungLuasPermukaan() {
+    public double hitungLuasPermukaan() {
         double luasAlas = super.hitungLuas();
         double kelilingAlas = super.hitungKeliling();
         luasPermukaanPrisma = 2 * luasAlas + kelilingAlas * tinggiPrisma;
+        return luasPermukaanPrisma;
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
         volumePrisma = super.hitungLuas() * tinggiPrisma;
+        return volumePrisma;
     }
 
     // Getter untuk ambil hasil hitungan (opsional)

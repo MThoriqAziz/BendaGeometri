@@ -18,7 +18,7 @@ public class main {
         frame.setLayout(new GridLayout(3, 1));
 
         JButton btn2D = new JButton("Benda 2D");
-        JButton btn3D = new JButton("Benda 3D (Prisma)");
+        JButton btn3D = new JButton("Benda 3D");
 
         frame.add(btn2D);
         frame.add(btn3D);

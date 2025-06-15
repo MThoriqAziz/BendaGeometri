@@ -17,17 +17,16 @@ public class LimasPersegi extends Persegi {
     }
 
     @Override
-    public void hitungVolume() {
-        volumeLimas = (1.0 / 3.0) * super.hitungLuas() * tinggiLimas;
+    public double hitungVolume() {
+        return (1.0 / 3.0) * super.hitungLuas() * tinggiLimas;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
+    public double hitungLuasPermukaan() {
         double luasAlas = super.hitungLuas();
-        // luas sisi tegak (segitiga sama kaki) = 1/2 * alas * tinggi segitiga
-        // alas segitiga sisi = sisi persegi (alas limas)
         double luasSisiTegak = 0.5 * super.sisi * tinggiSisiTegak;
         luasPermukaanLimas = luasAlas + 4 * luasSisiTegak;
+        return luasPermukaanLimas;
     }
 
     // Getter opsional untuk ambil hasil perhitungan

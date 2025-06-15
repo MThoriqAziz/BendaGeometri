@@ -1,11 +1,11 @@
 package bendaGeometri;
 
 public class Segitiga extends Benda2D {
-    private double alas;
-    private double tinggi;
-    private double sisiA;
-    private double sisiB;
-    private double sisiC;
+    public double alas;
+    public double tinggi;
+    public double sisiA;
+    public double sisiB;
+    public double sisiC;
 
     public Segitiga(double alas, double tinggi, double sisiA, double sisiB, double sisiC) {
         this.alas = alas;

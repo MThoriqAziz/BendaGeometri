@@ -20,15 +20,16 @@ public class PrismaBelahKetupat extends BelahKetupat {
     }
 
     @Override
-    public void hitungLuasPermukaan() {
+    public double hitungLuasPermukaan() {
         double luasAlas = super.hitungLuas();
         double keliling = super.hitungKeliling();
         luasPermukaanBk = 2 * luasAlas + keliling * tinggiPrismaBk;
+        return luasPermukaanBk;
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
         volumePrismaBk = super.hitungLuas() * tinggiPrismaBk;
-        
+        return volumePrismaBk;
     }
 }

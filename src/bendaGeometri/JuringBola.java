@@ -21,12 +21,17 @@ public class JuringBola extends Bola {
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
         // V = (2/3) * π * r^3 * (θ / 2π) = (1/3) * r^3 * θ
         volumeJuring = (1.0 / 3.0) * Math.pow(jariJari, 3) * theta;
+        return volumeJuring;
     }
 
     public double getVolumeJuring() {
         return volumeJuring;
     }
+    public double getLuasJuring() {
+        return luasJuring;
+    }
+
 }

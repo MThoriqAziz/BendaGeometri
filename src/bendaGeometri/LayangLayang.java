@@ -1,44 +1,64 @@
 package bendaGeometri;
 
 public class LayangLayang extends Benda2D {
+    private double diagonal1;
+    private double diagonal2;
+    private double sisiPendek;
+    private double sisiPanjang;
 
-    public double diagonal1;
-    
-    public double diagonal2;
-    
-    public double sisi1;
-    
-    public double sisi2;
-
-    private double luasLayangLayang;
-    
-    private double kelilingLayangLayang;
-
-    public LayangLayang(double diagonal1, double diagonal2, double sisi1, double sisi2) {
+    public LayangLayang(double diagonal1, double diagonal2, double sisiPendek, double sisiPanjang) {
         this.diagonal1 = diagonal1;
         this.diagonal2 = diagonal2;
-        this.sisi1 = sisi1;
-        this.sisi2 = sisi2;
+        this.sisiPendek = sisiPendek;
+        this.sisiPanjang = sisiPanjang;
+    }
+
+    // Getter
+    public double getDiagonal1() {
+        return diagonal1;
+    }
+
+    public double getDiagonal2() {
+        return diagonal2;
+    }
+
+    public double getSisiPendek() {
+        return sisiPendek;
+    }
+
+    public double getSisiPanjang() {
+        return sisiPanjang;
+    }
+
+    // Setter
+    public void setDiagonal1(double diagonal1) {
+        this.diagonal1 = diagonal1;
+    }
+
+    public void setDiagonal2(double diagonal2) {
+        this.diagonal2 = diagonal2;
+    }
+
+    public void setSisiPendek(double sisiPendek) {
+        this.sisiPendek = sisiPendek;
+    }
+
+    public void setSisiPanjang(double sisiPanjang) {
+        this.sisiPanjang = sisiPanjang;
     }
 
     @Override
     public double hitungLuas() {
-        luasLayangLayang = 0.5 * diagonal1 * diagonal2;
-        return luasLayangLayang;
+        return 0.5 * diagonal1 * diagonal2;
     }
 
-    public double getLuasLayangLayang() {
-        return luasLayangLayang;
+    // Overloading method
+    public double hitungLuas(double d1, double d2) {
+        return 0.5 * d1 * d2;
     }
 
     @Override
     public double hitungKeliling() {
-        kelilingLayangLayang = 2 * (sisi1 + sisi2);
-        return kelilingLayangLayang;
+        return 2 * (sisiPendek + sisiPanjang);
     }
-
-    public double getKelilingLayangLayang() {
-        return kelilingLayangLayang;
-    }
-
 }

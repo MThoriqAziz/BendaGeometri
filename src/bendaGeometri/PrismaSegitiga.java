@@ -1,36 +1,33 @@
 package bendaGeometri;
 
 public class PrismaSegitiga extends Segitiga {
+    private double tinggiPrisma;
+    private double volume;
+    private double luasPermukaan;
 
-    private double tinggiPrismaSegitiga;
-   
-    private double volumePrismaSegitiga;
-    
-    private double luasPermukaanPrismaSegitiga;
-
-    public PrismaSegitiga(double alas, double tinggiSegitiga, double sisiMiring, double tinggiPrismaSegitiga) {
-        super(alas, tinggiSegitiga, sisiMiring);
-        this.tinggiPrismaSegitiga = tinggiPrismaSegitiga;
+    public PrismaSegitiga(double alas, double tinggiSegitiga, double sisiA, double sisiB, double sisiC, double tinggiPrisma) {
+        super(alas, tinggiSegitiga, sisiA, sisiB, sisiC);
+        this.tinggiPrisma = tinggiPrisma;
     }
 
-    @Override
-    public void hitungVolume() {
-        double luasAlas = super.hitungLuas();
-        volumePrismaSegitiga = luasAlas * tinggiPrismaSegitiga;
+    public double getTinggiPrisma() {
+        return tinggiPrisma;
     }
 
-    @Override
-    public void hitungLuasPermukaan() {
-        double luasAlas = super.hitungLuas();
-        double kelilingAlas = super.hitungKeliling();
-        luasPermukaanPrismaSegitiga = 2 * luasAlas + kelilingAlas * tinggiPrismaSegitiga;
+    public void setTinggiPrisma(double tinggiPrisma) {
+        this.tinggiPrisma = tinggiPrisma;
     }
 
-    public double getVolumePrismaSegitiga() {
-        return volumePrismaSegitiga;
+    // Hitung Volume = Luas alas segitiga × tinggi prisma
+    public double hitungVolume() {
+        volume = super.hitungLuas() * tinggiPrisma;
+        return volume;
     }
 
-    public double getLuasPermukaanPrismaSegitiga() {
-        return luasPermukaanPrismaSegitiga;
+    // Hitung Luas Permukaan:
+    // 2 × Luas alas + keliling alas × tinggi prisma
+    public double hitungLuasPermukaan() {
+        luasPermukaan = 2 * super.hitungLuas() + super.hitungKeliling() * tinggiPrisma;
+        return luasPermukaan;
     }
 }

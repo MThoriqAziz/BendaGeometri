@@ -1,44 +1,38 @@
 package bendaGeometri;
 
 public class LimasPersegiPanjang extends PersegiPanjang {
-
     private double tinggiLimas;
-    private double volumeLimas;
-    private double luasPermukaanLimas;
+    private double volume;
+    private double luasPermukaan;
 
-    private double tinggiSegitigaDepan;
-    private double tinggiSegitigaSamping;
-
-    public LimasPersegiPanjang(double panjang, double lebar, double tinggiLimas, double tinggiSegitigaDepan, double tinggiSegitigaSamping) {
+    public LimasPersegiPanjang(double panjang, double lebar, double tinggiLimas) {
         super(panjang, lebar);
         this.tinggiLimas = tinggiLimas;
-        this.tinggiSegitigaDepan = tinggiSegitigaDepan;
-        this.tinggiSegitigaSamping = tinggiSegitigaSamping;
+    }
+
+    public double getTinggiLimas() {
+        return tinggiLimas;
+    }
+
+    public void setTinggiLimas(double tinggiLimas) {
+        this.tinggiLimas = tinggiLimas;
     }
 
     @Override
-    public void hitungVolume(){
-        volumeLimas = (1.0 / 3.0) * panjang * lebar * tinggiLimas;
+    public double hitungVolume() {
+        volume = (1.0 / 3.0) * super.hitungLuas() * tinggiLimas;
+        return volume;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
-        double luasAlas = panjang * lebar;
+    public double hitungLuasPermukaan() {
+        // Asumsi: sisi tegak terdiri dari dua pasang segitiga
+        double panjang = getPanjang();
+        double lebar = getLebar();
 
-        double luasSegitigaDepan = (panjang * tinggiSegitigaDepan) / 2;
-        double luasSegitigaBelakang = luasSegitigaDepan;
-
-        double luasSegitigaKanan = (lebar * tinggiSegitigaSamping) / 2;
-        double luasSegitigaKiri = luasSegitigaKanan;
-
-        luasPermukaanLimas = luasAlas + luasSegitigaDepan + luasSegitigaBelakang + luasSegitigaKanan + luasSegitigaKiri;
-    }
-
-    public double getVolumeLimas() {
-        return volumeLimas;
-    }
-
-    public double getLuasPermukaanLimas() {
-        return luasPermukaanLimas;
+        // Asumsi tinggi segitiga sisi tegak = tinggi limas
+        double luasSisiTegak = 2 * (0.5 * panjang * tinggiLimas) + 2 * (0.5 * lebar * tinggiLimas);
+        luasPermukaan = super.hitungLuas() + luasSisiTegak;
+        return luasPermukaan;
     }
 }

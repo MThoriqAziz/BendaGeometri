@@ -22,14 +22,24 @@ public class LimasBelahKetupat extends BelahKetupat {
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
         volumeLimasBk = (1.0 / 3.0) * super.hitungLuas() * tinggiLimasBk;
+        return volumeLimasBk;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
+    public double hitungLuasPermukaan() {
         double luasAlas = super.hitungLuas();
         double luasSisiTegak = (1.0 / 2.0) * super.hitungKeliling() / 4 * tinggiSisiTegakBk;
         luasPermukaanLimasBk = luasAlas + 4 * luasSisiTegak;
+        return luasPermukaanLimasBk;
+    }
+    
+    public double getVolumeLimasBelahKetupat() {
+        return volumeLimasBk;
+    }
+
+    public double getLuasPermukaanBelahKetupat() {
+        return luasPermukaanLimasBk;
     }
 }

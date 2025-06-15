@@ -1,3 +1,4 @@
+
 package bendaGeometri;
 
 public class PrismaTrapesium extends Trapesium {
@@ -8,7 +9,7 @@ public class PrismaTrapesium extends Trapesium {
 
     private double luasPermukaanPrismaTrapesium;
 
-    public PrismaTrapesium(double sisiSejajar1, double sisiSejajar2, double tinggi, double sisiMiring, double tinggiPrismaTrapesium) {
+    public PrismaTrapesium(double sisiSejajar1, double sisiSejajar2, int tinggi, double sisiMiring, double tinggiPrismaTrapesium) {
         super(sisiSejajar1, sisiSejajar2, tinggi, sisiMiring);
 
         if (sisiSejajar1 <= 0 || sisiSejajar2 <= 0 || tinggi <= 0 || sisiMiring <= 0 || tinggiPrismaTrapesium <= 0) {
@@ -19,22 +20,16 @@ public class PrismaTrapesium extends Trapesium {
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
         volumePrismaTrapesium = super.hitungLuas() * tinggiPrismaTrapesium;
-    }
-
-    @Override
-    public void hitungLuasPermukaan() {
-        double luasAlas = super.hitungLuas();
-        double keliling = super.hitungKeliling();
-        luasPermukaanPrismaTrapesium = 2 * luasAlas + keliling * tinggiPrismaTrapesium;
-    }
-
-    public double getVolumePrismaTrapesium() {
         return volumePrismaTrapesium;
     }
 
-    public double getLuasPermukaanPrismaTrapesium() {
+    @Override
+    public double hitungLuasPermukaan() {
+        double luasAlas = super.hitungLuas();
+        double keliling = super.hitungKeliling();
+        luasPermukaanPrismaTrapesium = 2 * luasAlas + keliling * tinggiPrismaTrapesium;
         return luasPermukaanPrismaTrapesium;
     }
 }

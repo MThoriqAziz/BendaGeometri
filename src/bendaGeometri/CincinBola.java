@@ -6,7 +6,7 @@ public class CincinBola extends Bola {
 
     private double jarakDuaBidang;
 
-    private double volume;
+    private double volumeCincinBola;
 
     private double luasPermukaan;
 
@@ -20,23 +20,24 @@ public class CincinBola extends Bola {
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
          double r = super.getJariJari();
         double h = jarakDuaBidang;
         double a = r;
         double b = jariJariDalam;
-        volume =  Math.PI * h * h * (r - h / 3.0);
-      
+        volumeCincinBola =  Math.PI * h * h * (r - h / 3.0);
+      return volumeCincinBola;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
+    public double hitungLuasPermukaan() {
      luasPermukaan = 2 * Math.PI * jarakDuaBidang * super.getJariJari();
+     return luasPermukaan;
     }
     
     
     public double getVolume() {
-        return volume;
+        return volumeCincinBola;
     }
 
     public double getLuasPermukaan() {

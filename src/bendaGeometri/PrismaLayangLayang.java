@@ -1,26 +1,32 @@
 package bendaGeometri;
 
 public class PrismaLayangLayang extends LayangLayang {
+    protected double tinggiPrisma;
+    private double volume;
+    private double luasPermukaan;
 
-    private double tinggiPrismaLayangLayang;
+    public PrismaLayangLayang(double diagonal1, double diagonal2, double sisiPendek, double sisiPanjang, double tinggiPrisma) {
+        super(diagonal1, diagonal2, sisiPendek, sisiPanjang);
+        this.tinggiPrisma = tinggiPrisma;
+    }
 
-    private double volumePrismaLayangLayang;
-    
-    private double luasPermukaanPrismaLayangLayang;
+    public double getTinggiPrisma() {
+        return tinggiPrisma;
+    }
 
-    public PrismaLayangLayang(double diagonal1, double diagonal2, double sisi1, double sisi2, double tinggiPrismaLayangLayang) {
-        super(diagonal1, diagonal2, sisi1, sisi2);
-        this.tinggiPrismaLayangLayang = tinggiPrismaLayangLayang;
+    public void setTinggiPrisma(double tinggiPrisma) {
+        this.tinggiPrisma = tinggiPrisma;
     }
 
     @Override
-    public void hitungVolume() {
-        volumePrismaLayangLayang = super.hitungLuas() * tinggiPrismaLayangLayang;
+    public double hitungVolume() {
+        volume = super.hitungLuas() * tinggiPrisma;
+        return volume;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
-        luasPermukaanPrismaLayangLayang = 
-            2 * super.hitungLuas() + super.hitungKeliling() * tinggiPrismaLayangLayang;
+    public double hitungLuasPermukaan() {
+        luasPermukaan = 2 * super.hitungLuas() + super.hitungKeliling() * tinggiPrisma;
+        return luasPermukaan;
     }
 }

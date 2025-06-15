@@ -6,7 +6,7 @@ public class LimasTrapesium extends Trapesium {
     private double volumeLimasTrapesium;
     private double luasPermukaanLimasTrapesium;
 
-    public LimasTrapesium(double sisiSejajar1, double sisiSejajar2, double tinggi, double sisiMiring, double tinggiLimasTrapesium) {
+    public LimasTrapesium(double sisiSejajar1, double sisiSejajar2, int tinggi, double sisiMiring, double tinggiLimasTrapesium) {
         super(sisiSejajar1, sisiSejajar2, tinggi, sisiMiring);
 
         if (sisiSejajar1 <= 0 || sisiSejajar2 <= 0 || tinggi <= 0 || sisiMiring <= 0 || tinggiLimasTrapesium <= 0) {
@@ -17,13 +17,14 @@ public class LimasTrapesium extends Trapesium {
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
         double luasAlas = super.hitungLuas();
         volumeLimasTrapesium = (1.0 / 3.0) * luasAlas * tinggiLimasTrapesium;
+        return volumeLimasTrapesium;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
+    public double hitungLuasPermukaan() {
         double luasAlas = super.hitungLuas();
 
         // Anggap setiap sisi samping berupa segitiga, kita pakai perkiraan luas segitiga ½ × alas × tinggiSisi
@@ -34,6 +35,7 @@ public class LimasTrapesium extends Trapesium {
         double luasSisiSamping = 0.5 * kelilingAlas * tinggiLimasTrapesium;
 
         luasPermukaanLimasTrapesium = luasAlas + luasSisiSamping;
+        return luasPermukaanLimasTrapesium;
     }
 
     public double getVolumeLimasTrapesium() {

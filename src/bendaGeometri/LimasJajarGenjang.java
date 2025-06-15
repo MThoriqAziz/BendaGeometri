@@ -1,11 +1,11 @@
 package bendaGeometri;
 
 public class LimasJajarGenjang extends JajarGenjang {
-
-    private double volumeLimasJajarGenjang;
-    private double luasPermukaanLimasJajarGenjang;
-    public double tinggiLimas;
-    public double tinggiSisiTegak;
+    protected double tinggiLimas;
+    protected double tinggiSisiTegak;
+    
+    private double volume;
+    private double luasPermukaan;
 
     public LimasJajarGenjang(double alas, double tinggiAlas, double sisiMiring, double tinggiLimas, double tinggiSisiTegak) {
         super(alas, tinggiAlas, sisiMiring);
@@ -13,32 +13,40 @@ public class LimasJajarGenjang extends JajarGenjang {
         this.tinggiSisiTegak = tinggiSisiTegak;
     }
 
-    @Override
-    public void hitungVolume() {
-        double luasAlas = hitungLuas(); // menggunakan metode dari superclass
-        volumeLimasJajarGenjang = (1.0 / 3.0) * luasAlas * tinggiLimas;
-        System.out.println("Volume Limas Jajar Genjang: " + volumeLimasJajarGenjang);
+    public double getTinggiLimas() {
+        return tinggiLimas;
+    }
+
+    public double getTinggiSisiTegak() {
+        return tinggiSisiTegak;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
-        double luasAlas = hitungLuas();
-        double luasSisiTegak = 2 * getAlas() * tinggiSisiTegak + 2 * getSisiMiring() * tinggiSisiTegak;
+    public double hitungVolume() {
+        double luasAlas = super.hitungLuas();
+        volume = (1.0 / 3.0) * luasAlas * tinggiLimas;
+        return volume;
+    }
+
+    @Override
+    public double hitungLuasPermukaan() {
+        double luasAlas = super.hitungLuas();
+        double luasSisiTegak = 2 * super.alas * tinggiSisiTegak + 2 * super.sisiMiring * tinggiSisiTegak;
         luasSisiTegak = 0.5 * luasSisiTegak;
-        luasPermukaanLimasJajarGenjang = luasAlas + luasSisiTegak;
-        System.out.println("Luas Permukaan Limas Jajar Genjang: " + luasPermukaanLimasJajarGenjang);
+        luasPermukaan = luasAlas + luasSisiTegak;
+        return luasPermukaan;
     }
 
-    public void hitungLuasSisiTegak() {
-        double luasSisi = 0.5 * getAlas() * tinggiSisiTegak;
-        System.out.println("Luas satu sisi tegak: " + luasSisi);
-    }
-
-    public double getAlas() {
-        return this.alas;
-    }
-
-    public double getSisiMiring() {
-        return this.sisiMiringJajarGenjang;
+    // Metode tambahan (bukan override) untuk menghitung luas satu sisi tegak
+    public double hitungLuasSisiTegak() {
+        return 0.5 * super.alas * tinggiSisiTegak;
     }
 }

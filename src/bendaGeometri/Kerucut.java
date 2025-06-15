@@ -14,15 +14,17 @@ public class Kerucut extends Lingkaran {
     }
 
     @Override
-    public void hitungVolume() {
+    public double hitungVolume() {
         volumeKerucut = (1.0 / 3) * Math.PI * jariJari * jariJari * tinggiKerucut;
+        return volumeKerucut;
     }
 
     @Override
-    public void hitungLuasPermukaan() {
+    public double hitungLuasPermukaan() {
         // s = √(r^2 + t^2)
         double sisiMiring = Math.sqrt((jariJari * jariJari) + (tinggiKerucut * tinggiKerucut));
         // L = π * r * (r + s)
         luasPermukaanKerucut = Math.PI * jariJari * (jariJari + sisiMiring);
+        return luasPermukaanKerucut;
     }
 }

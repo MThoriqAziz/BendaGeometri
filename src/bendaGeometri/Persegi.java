@@ -14,14 +14,12 @@ public class Persegi extends Benda2D {
     
     @Override
     public double hitungLuas() {
-        luasPersegi = sisi * sisi;
-        return luasPersegi;
+        return sisi * sisi;
     }
     
     @Override
     public double hitungKeliling() {
-        kelilingPersegi = 4 * sisi;
-        return kelilingPersegi;
+        return 4 * sisi;
     }
 
 }
